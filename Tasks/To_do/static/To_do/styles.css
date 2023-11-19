@@ -18,6 +18,19 @@
     padding: 7px;
 }
 footer{
-    width: 80%;
-    background-color: azure;
+    background-color: #e3f2fd;;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
+}
+
+main {
+    flex: 1; /* Allow the main content to grow and take available space */
+}
+
+footer {
+    padding: 10px;
 }

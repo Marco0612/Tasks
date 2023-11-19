@@ -11,7 +11,7 @@
     </head>
     <body>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg" style="background-color: #e3f2fd;; padding-left: 10%; padding-right: 10%;">
             <a class="navbar-brand" href="{% url 'tasks' %}">Tasks</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -46,15 +46,19 @@
             </div>
           </nav>
         
-
-        {% block body %}
-        {% endblock %}
+          <main>
+            {% block body %}
+            {% endblock %}
+        </main>
+        <br><br>
             
         <footer>
-                <br><br>
-                <p>&copy; 2023 Your Task App</p>
-                <p>Made by Marco A. Reyes - TEP PUCMM student- 10146049</p>
-                <br><br>
+            <br>
+            <div class="contenedor">
+                <p>&copy; 2023 Task App</p>
+                <p>Made by Marco A. Reyes - TEP PUCMM Student - 10146049</p>
+            </div>
+            <br><br>
 
         </footer>
 
