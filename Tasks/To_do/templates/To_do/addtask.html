@@ -1,0 +1,27 @@
+{% extends "To_do/layout.html" %}
+
+{% block title %}Add Task{% endblock %}
+
+{% block body %}
+    <br>
+    <center> <h3>Add a Task</h3></center>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="contenedor">
+            <label for="name">Name of the Task:</label>
+            <input type="text" name="name" id="name" required>
+            <label for="due_date">Date:</label>
+            <input type="date" name="due_date" id="date_due" required>
+            <label for="relev">Relevance:</label>
+            <select name="relev" id="relev">
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <input class="btn btn-primary" type="submit" value="Add Task">
+        </div>
+    </form>
+
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends "to_do/layout.html" %}
+
+{% block body %}
+
+    <div class="contenedor">
+    <header>
+        <center>
+        <h1>Welcome to the Task App</h1> </center>
+        <br>
+        <p>Manage your tasks efficiently with our Task App!</p>
+        <br>
+    </header>
+
+    <section>
+        <h2>Features</h2>
+        <ul>
+            <li>View a list of tasks</li>
+            <li>Add new tasks</li>
+            <li>Edit existing tasks</li>
+            <li>Delete tasks</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Getting Started</h2>
+        <p>To get started, follow these steps:</p>
+        <ol>
+            <li>Login to the Dashboard.</li>
+            <li>Click on the "Tasks" section to manage your tasks.</li>
+            <li>Add, edit, or delete tasks as needed.</li>
+        </ol>
+    </section>
+
+    <section>
+        <h2>Example Code</h2>
+        <p>Here's an example of how you can interact with tasks in your Django views:</p>
+        <pre>
+            <code>
+                from task.models import Task
+
+                # Retrieve all tasks
+                all_tasks = Task.objects.all()
+
+                # Add a new task
+                new_task = Task.objects.create(title="Example Task", description="This is an example task.")
+
+                # Edit a task
+                task_to_edit = Task.objects.get(id=1)
+                task_to_edit.title = "Updated Task Title"
+                task_to_edit.save()
+
+                # Delete a task
+                task_to_delete = Task.objects.get(id=2)
+                task_to_delete.delete()
+            </code>
+        </pre>
+    </section>
+
+    <!-- Add any additional sections as needed -->
+</div>
+
+{% endblock %}

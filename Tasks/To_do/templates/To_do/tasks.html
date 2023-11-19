@@ -1,0 +1,38 @@
+{% extends "To_do/layout.html" %}
+
+{% block tittle%}My Tasks{% endblock %}
+{% block body %}
+    <br>
+    <center><h2>Tasks</h2> </center>
+    <br>
+    <div class="contenedor">
+        {% for task in tasks %}
+            <div class="task">
+                <h3>{{task.title}}</h3>
+                <p>{{task.description}}<p>
+                Created on <i>{{task.created}}</i><br>
+                <span>
+                    <form  method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="task_id" value="{{task.id}}" />
+                        <input name="done" class="btn btn-outline-success btn-sm" type="submit" value="Mark as Done">
+                    <form>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="task_id" value="{{task.id}}" />
+                        <input name="edit" class="btn btn-outline-warning btn-sm" type="submit" value="Edit">
+                    <form>
+                    <form method="POST">
+                        {% csrf_token %}
+                        <input type="hidden" name="task_id" value="{{task.id}}" />
+                        <input name="delete" class="btn btn-outline-danger btn-sm" type="submit" value="Delete">
+                    <form>
+                </span>
+                
+            </div>
+        {% empty %}
+            <li>No active tasks</li>
+        {% endfor %}
+    </div>
+
+{% endblock %}

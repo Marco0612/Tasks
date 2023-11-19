@@ -1,0 +1,28 @@
+{% extends "To_do/layout.html" %}
+
+{% block title %}Edit Task{% endblock %}
+
+{% block body %}
+    <br>
+    <center> <h3>Edit a Task</h3></center>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <div class="contenedor">
+            <input type="hidden" name="task_id" value="{{task.id}}" />
+            <label for="name">Name of the Task:</label>
+            <input type="text" name="name" id="name" value="{{task.title}}" >
+            <label for="due_date">Due Date:</label>
+            <input type="date" name="due_date" id="date_due" value="{{task.due_date}}" >
+            <label for="relev">Relevance:</label>
+            <select name="relev" id="relev" value= {{task.relevanse}}>
+                <option value="1">Low</option>
+                <option value="2">Medium</option>
+                <option value="3">High</option>
+            </select>
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="30" rows="10">{{task.description}}</textarea>
+            <input class="btn btn-primary" type="submit" value="Edit Task">
+        </div>
+    </form>
+
+{% endblock %}

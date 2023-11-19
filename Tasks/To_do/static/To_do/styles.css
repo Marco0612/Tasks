@@ -1,0 +1,23 @@
+/* CSS to style the form elements */
+.contenedor {
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%;
+}
+
+.contenedor > * 
+{
+    display: block; /* Display each label on a new line */
+    margin-top: 10px;
+    width: 100%;
+
+}
+.task{
+    border-radius: 5px;
+    border: 1px solid;
+    padding: 7px;
+}
+footer{
+    width: 80%;
+    background-color: azure;
+}
